@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\course;
+use App\Models\Admin;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -59,7 +61,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
         return view('admin.useredit',compact("user"));
     }
@@ -71,11 +73,27 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         $user->update($request->all());   
         $users=User::all();
         return view('admin.usertable',compact("users")); 
+    }
+    public function userProfile()
+    {
+       $id=Auth::user()->id;
+       $users=User::all();
+        $courses =Course::join('course_user', 'courses.id', '=', 'course_user.course_id')
+        ->where('course_user.user_id',$id)
+        ->get(['courses.*' ,'course_user.*']);
+            
+        return view('auth.userProfile',compact("courses"));    
+    }
+    public function updateUserProfile(Request $request,User $user)
+    {
+        $user->update($request->all());   
+        $users=User::all();
+        return redirect()->back();
     }
 
     /**

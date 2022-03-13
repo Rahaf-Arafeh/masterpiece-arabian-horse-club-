@@ -19,28 +19,61 @@ class coursesSeeder extends Seeder
                 'course_name' => 'hourse riding for beginners',
                 'course_desc' => 'professional training',
                 'course_trainer' => 'mohmad',
-                'course_price'=>'300',
+                'course_price'=>300,
                 'course_period'=>'2 months',
                 'course_date'=>'2022-12-31',
-                'img'=>'https://www.fourseasons.com/alt/img-opt/~80.930.0,0000-132,7500-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/AMM/AMM_727_original.jpg'
+                'img'=>'https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'capacity'=>30
             ], 
             [
                 'course_name' => 'hourse riding for beginners',
                 'course_desc' => 'professional training',
                 'course_trainer' => 'mohmad',
-                'course_price'=>'300',
+                'course_price'=>300,
                 'course_period'=>'2 months',
                 'course_date'=>'2022-12-31',
-                'img'=>'https://www.fourseasons.com/alt/img-opt/~80.930.0,0000-132,7500-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/AMM/AMM_727_original.jpg'
+                'img'=>'https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'capacity'=>30
+            ],
+            [
+                'course_name' => 'hourse riding for beginners',
+                'course_desc' => 'professional training',
+                'course_trainer' => 'mohmad',
+                'course_price'=>300,
+                'course_period'=>'2 months',
+                'course_date'=>'2022-12-31',
+                'img'=>'https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'capacity'=>30
             ], 
             [
                 'course_name' => 'hourse riding for beginners',
                 'course_desc' => 'professional training',
                 'course_trainer' => 'mohmad',
-                'course_price'=>'300',
+                'course_price'=>300,
                 'course_period'=>'2 months',
                 'course_date'=>'2022-12-31',
-                'img'=>'https://www.fourseasons.com/alt/img-opt/~80.930.0,0000-132,7500-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/AMM/AMM_727_original.jpg'
+                'img'=>'https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'capacity'=>30
+            ], 
+            [
+                'course_name' => 'hourse riding for beginners',
+                'course_desc' => 'professional training',
+                'course_trainer' => 'mohmad',
+                'course_price'=>300,
+                'course_period'=>'2 months',
+                'course_date'=>'2022-12-31',
+                'img'=>'https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'capacity'=>40
+            ],  
+            [
+                'course_name' => 'hourse riding for beginners',
+                'course_desc' => 'professional training',
+                'course_trainer' => 'mohmad',
+                'course_price'=>300,
+                'course_period'=>'2 months',
+                'course_date'=>'2022-12-31',
+                'img'=>'https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'capacity'=>20
             ], 
         ]);
     }

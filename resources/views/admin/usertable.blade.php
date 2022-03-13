@@ -34,7 +34,7 @@
                                         <tr>
                                             <th>name</th>
                                             <th>email</th>
-                                            <th>phone</th>
+                                            <!-- <th>phone</th> -->
                                             <th>password</th>
                                             <th>is_admin </th>
                                           
@@ -44,7 +44,7 @@
                                         <tr>
                                         <th>name</th>
                                             <th>email</th>
-                                            <th>phone</th>
+                                            <!-- <th>phone</th> -->
                                             <th>password</th>
                                             <th>is_admin </th>
                                         </tr>
@@ -54,7 +54,7 @@
                                         <tr>
                                             <td>{{$user->name}}</td>   
                                             <td>{{$user->email}}</td>
-                                            <td>{{$user->phone}}</td>
+                                            <!-- <td>{{$user->phone}}</td> -->
                                             <td>{{$user->password}}</td>
                                             <td>{{$user->role}}</td>
 

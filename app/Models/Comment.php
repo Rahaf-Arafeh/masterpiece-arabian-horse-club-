@@ -9,7 +9,7 @@ class comment extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'comment_desc',
+        'comment_desc'
         
     ]; 
     public function courses()

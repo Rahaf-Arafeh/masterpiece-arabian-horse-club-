@@ -33,10 +33,10 @@
                                                 <label for="exampleFormControlInput1" class="form-label">email</label>
                                                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
                                             </div>
-                                            <div class="mb-3">
+                                            <!-- <div class="mb-3">
                                                 <label for="exampleFormControlInput1" class="form-label">phone</label>
                                                 <input type="tel" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Enter phone number" required>
-                                            </div>
+                                            </div> -->
                                             <div class="mb-3">
                                                 <label for="exampleFormControlTextarea1" class="form-label">password</label>
                                                 <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>

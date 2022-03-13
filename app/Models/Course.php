@@ -15,7 +15,8 @@ class course extends Model
         'course_price',
         'course_period',
         'course_date',
-        'img'
+        'img',
+        'capacity'
     ]; 
 
     public function comments()

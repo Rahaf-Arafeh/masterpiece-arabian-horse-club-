@@ -1,4 +1,4 @@
-<!-- @extends('layouts.footer') -->
+@extends('layouts.footer')
 @extends('layouts.navbar')
 @section('content')
 <section id="about"></section>

@@ -11,6 +11,8 @@
     --lightblack: #333;
     --white: #f8f8ff;
     --red:#EC255A;
+    --yallow:#fdb51f;
+    --hoveryallow:#eebc4f ;
     --black:#1111;
     --bs-gray-200:  #e9ecef;
     --bs-gray-300:  #dee2e6;
@@ -69,12 +71,12 @@
 
  #home .home-bg-content button{
  position: relative;
-  z-index: 5;   
+ z-index: 5;  
   padding:0.6em 1em;
   border-radius: 30px;
   color:#f8f8ff;
   border-style: none;
-  background-color:#EC255A ;
+  background-color:var(--yallow);
   width: 25%;
   text-transform: uppercase !important;
   font-size: 1em;
@@ -83,7 +85,7 @@
  }
  #home button:hover{
      cursor: pointer;
-     background-color:#f13769 ;
+     background-color:var(--hoveryallow) ;
  }
  /* home courses section */
  .home-course-card-desc{
@@ -100,7 +102,7 @@
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 1px;
-  background:#EC255A;
+  background:var(--yallow);
   border-radius: 30px;
   margin-top: -9em;
  }
@@ -117,7 +119,7 @@
  }
  .home-course-card button:hover{
     cursor: pointer;
-    background-color:#f13769 ;
+    background-color:var(--hoveryallow) ;
 }
 /* about us */
 #about{
@@ -222,7 +224,7 @@
   font-size: 1.5em;
   text-transform: uppercase;
   margin-bottom: 20px;
-  border-bottom: 4px solid var(--red);
+  border-bottom: 4px solid var(--yallow);
   display: inline-block;
   letter-spacing: 1px;
 }
@@ -234,7 +236,7 @@
   font-size: 16px;
   margin-bottom: 5px;
   display: inline-block;
-  color: var(--red);
+  color: var(--yallow);
   font-weight: 300;
   letter-spacing: 1px;
 }
@@ -242,7 +244,7 @@
     margin-top: 5px;
     margin-bottom: 10px;
   display: inline-block;
-  color: var(--red);
+  color: var(--yallow);
   font-weight: 300;
   letter-spacing: 1px;
 }
@@ -251,15 +253,15 @@
   padding: 10px 20px;
   outline: none;
   font-weight: 400;
-  border: 1px solid var(--red);
+  border: 1px solid var(--yallow);
   font-size: 16px;
   letter-spacing: 1px;
-  color: var(--red);
+  color: var(--yallow);
   background: transparent;
   border-radius: 30px;
 }
 .form2-signin .content-box .form-box-sigin .form-group input[type='submit']{
-  background: var(--red);
+  background: var(--yallow);
   color: var(--white);
   outline: none;
   border: none;
@@ -268,16 +270,16 @@
 }
 .form2-signin .content-box .form-box-sigin .form-group input[type='submit']:hover{
     cursor: pointer;
-    background-color:#f13769 ;
+    background-color:var(--hoveryallow) ;
 }
 .form2-signin .content-box .form-box-sigin .form-group p{
   color: var(--lightblack);;
 }
 .form2-signin .content-box .form-box-sigin .form-group p a{
-  color:var(--red);
+  color:var(--yallow);
 }
 .form2-signin .content-box .form-box-sigin .form-footer a{
-   color:var(--red);
+   color:var(--yallow);
 }
 .form-footer{
     display: flex;
@@ -305,7 +307,7 @@
 }
 .courses-section h5 a{
     text-decoration: none;
-    color: #EC255A;
+    color: var(--yallow);
 }
 .courses-section button a{
    text-decoration: none;
@@ -325,15 +327,15 @@
 .course-card-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap:2rem;
+    grid-gap:3rem;
     height: 100vh;
 }
 .course-card{
      text-align: center;
+     padding:1em;
     margin-top: -5em;
     position: relative;
-    /* padding: 1rem; */
-    margin: 0.7rem 0;
+    margin:2rem 0;
     height:80vh;
     -webkit-box-shadow: 0px 10px 20px -12px rgb(0 0 0 / 18%);
     -moz-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
@@ -344,16 +346,16 @@ width: 100%;
 height: 50%;
 }
 .course-card-container .course-card p{
-    padding:0.7em;
     color:#828282;
     font-size: medium;
+    text-transform: capitalize;
 }
-/* .course-card-container .course-card p span{
-  color: var(--red);
-} */
+.course-card-container .course-card p span{
+  color: var(--yallow);
+  font-weight: 600;
+}
 .course-card-container .course-card a{
-    padding:0.7em;
-    color:var(--red);
+    color:var(--yallow);
     font-size: medium;
     text-transform: uppercase;
 }
@@ -361,7 +363,249 @@ height: 50%;
     padding:0.7em;
     font-weight: 400;
     color:var(--lightblack);
-    text-transform:capitalize;
+    text-transform:uppercase;
+}
+.row-search{
+  width:100%;
+  margin:2% auto 0% auto;
+}
+.row-search form{
+  display:flex;
+  justify-content:center;
+  margin:0.9em ;
+}
+.row-search label{
+  align-self:center;
+
+}
+.row-search input{
+  width:90% !important;
+  margin-right:1rem;
+  height: 50px;
+}
+.row-search button{
+  background-color:var(--yallow);
+  color:var(--white);
+  border: none;
+  border-radius: 3em;
+  padding:0 2em;
+  height: 50px;
+}
+/* course details page */
+.course-detail-container{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  /* margin: 2em 4em; */
+  margin:2em;
+}
+.course-detail-container .img-detail{
+  display: flex;
+  justify-content: space-between;
+  padding:2.5em 1em;
+  border-bottom: 1px solid var(--bs-gray-400);
+  
+  /* align-items: center; */
+}
+.course-detail-container .img-detail .name-book{
+   margin: 0 2em;
+}
+.book-section{
+  width: 50%;
+  margin: 2em 1em;
+}
+.name-book h1 span{
+  color: var(--yallow);
+}
+.name-book h1{
+  color:var(--lightblack);
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.book-section h2{
+  color:var(--lightblack);
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid var(--yallow);
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.book-section .form-group{
+  margin-bottom: 20px;
+ 
+}
+.book-section .form-group label{
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: var(--yallow);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.book-section .form-group input{
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid var(--yallow);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: var(--yallow);
+  background: transparent;
+  border-radius: 30px;
+}
+.book-section .form-group input[type='submit']{
+  background: var(--yallow);
+  color: var(--white);
+  margin-top: 1em;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  /*  */
+  width: 40%;
+  padding: 10px 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-radius: 30px;
+}
+.book-section .form-group input[type='submit']:hover{
+  cursor: pointer;
+  background-color:var(--hoveryallow) ;
+}
+.course-detail-container.img-detail .img-box img{
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  object-fit:cover;   
+}
+
+/* .course-details .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+.course-detail-container .table-details{
+  display: flex;
+  justify-content: space-between;
+  padding:1em;
+}
+
+.course-detail-container .details{
+  margin: 2em;
+  font-size: 1.3em;
+}
+.course-detail-container  .details .label{
+  color:var(--yallow);
+  font-weight: 500;
+  line-height: 3;
+}
+.course-detail-container  .details .info{
+  color: var(--lightblack);
+}
+.comment-table{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12em;
+
+}
+.comment-section{
+  width: 50%;
+  margin: 2em;
+}
+.comment-section h2{
+  color:var(--lightblack);
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid var(--yallow);
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.comment-section .form-group{
+  margin-bottom: 20px;
+ 
+}
+.comment-section .form-group label{
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: inline-block;
+  color: var(--yallow);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.comment-section .form-group #comment{
+  width: 80%;
+  padding: 10px 20px;
+  outline: none;
+  font-weight: 400;
+  border: 1px solid var(--yallow);
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: var(--yallow);
+  background: transparent;
+  border-radius: 30px;
+}
+.comment-section .form-group input[type='submit']{
+  background: var(--yallow);
+  color: var(--white);
+  margin-top: 1em;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  /*  */
+  width: 30%;
+  padding: 10px 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-radius: 30px;
+}
+.comment-section .form-group input[type='submit']:hover{
+    cursor: pointer;
+    background-color:var(--hoveryallow) ;
+}
+/* profile page */
+.reservation-table{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5em;
+  margin-top:-7em;
+
+  /* overflow-x:auto; */
+}
+.reservation-table h2{
+   color: var(--lightblack);
+   display: inline-block;
+   letter-spacing: 1px;
+}
+.reservation-table table{
+  width: 100%;
+}
+
+.reservation-table table{
+  border-collapse: separate;
+  border-spacing: 0 7px;
+}
+.reservation-table table th{
+  background-color: var(--yallow);
+  color: var(--white);
+  padding: 1em;
+}
+
+.reservation-table table td{
+  background-color: var(--lightblack);
+  color: var(--white);
+  font-weight: bold;
+  padding: 1em;
 }
 /* footer section */
 .footer{
@@ -379,7 +623,7 @@ height: 50%;
   }
   .important-links h2{
      padding:0.3em;
-     border-bottom: solid #EC255A 4px;
+     border-bottom: solid var(--yallow) 4px;
   }
    .important-links ul{
       display: flex;
@@ -394,12 +638,12 @@ height: 50%;
   }
   .important-links ul li a:hover{
     cursor: pointer;
-    color: #EC255A;
+    color: var(--hoveryallow);
     text-decoration: underline;
   }
   .follow-us h2{
     padding:0.3em;
-    border-bottom: solid #EC255A 4px;
+    border-bottom: solid var(--yallow) 4px;
   }
   .follow-us ul{
     display: flex;
@@ -414,11 +658,11 @@ height: 50%;
   }
   .follow-us ul li a:hover{
    cursor: pointer;
-   color: #EC255A;
+   color: var(--hoveryallow);
   }
   .payment-methods h2{
     padding:0.3em;
-    border-bottom: solid #EC255A 4px;
+    border-bottom: solid var(--yallow) 4px;
   }
   .payment-methods ul li {
    padding:0 10px;

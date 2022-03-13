@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\comment;
 use App\Models\course;
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -43,7 +46,7 @@ class CourseController extends Controller
         return view('admin.tables',compact("courses"));
 
     }
-
+  
     /**
      * Display the specified resource.
      *
@@ -52,7 +55,8 @@ class CourseController extends Controller
      */
     public function show(course $course)
     {
-        //
+        $courses=Course::all();
+        return view('pages.courses',compact("courses"));
     }
 
     /**
@@ -79,7 +83,66 @@ class CourseController extends Controller
         $courses=Course::all();
         return view('admin.tables',compact("courses"));
     }
+    public function showSingleCourse(course $course)
+    {
+        return view('pages.courses-detail',compact("course"));
+    }
+    public function search(Request $request)
+    {
+       $courses=Course::query()
+       ->where('course_name','LIKE',"%{$request->courseName}%")
+       ->where('course_trainer','LIKE',"%{$request->courseTrainer}%")
+       ->whereBetween('course_price', [$request->fromPrice,$request->toPrice])
+       ->get();
+       if(empty($courses)){
+           return redirect()->back()->with('search','No Results Found!');
+       }
+      else{ 
+        return view('pages.courses',compact("courses"));
+      }
+    }
 
+    public function book(Request $request,Course $course)
+    {  
+         $courses=DB::table('courses')->where('id', $course->id)->first();
+
+        if (Auth::check()) {
+       
+        $courses = DB::table('course_user')->where('course_id', $course->id)->get();
+        $courseCount = $courses->count();
+        if($courseCount == $course->capacity){
+            return redirect()->back()->with('fail','This Course Falled!');
+        }
+        $error=false;
+    
+        
+        if(!$error){
+             $id=Auth::user()->id;
+            $course->users()->attach($id,['phone'=> $request->phone]);
+            return redirect()->back()->with('success','This Course Booked Successfully');
+        }
+    }
+        else{
+            return redirect('/login'); 
+        }
+          
+    }
+    public function storeComment(Request $request,comment $comment,Course $course)
+    {
+       if(Auth::check()){
+        $id=Auth::user()->id;
+        $data = array(
+            'comment_desc'=>$request->comment,
+            "user_id"=>$id,
+            'course_id'=>$course->id
+        );
+        DB::table('comments')->insert($data);
+        return redirect()->back();
+       }
+       else {
+        return redirect('/login'); 
+       }
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -90,6 +153,6 @@ class CourseController extends Controller
     {
         //
         $course->delete(); 
-        return redirect()->back();
+        return redirect()->route('course.index');
     }
 }

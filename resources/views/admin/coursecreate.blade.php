@@ -46,7 +46,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3">
-                                                        <input class="form-control" id="inputPassword" type="number" placeholder="Enter capacity" name="course_price" />
+                                                        <input class="form-control" id="inputPassword" type="number" placeholder="Enter price" name="course_price" />
                                                         <label for="inputPassword">Course price</label>
                                                     </div>
                                                 </div>
@@ -66,6 +66,12 @@
                                                     <div class="form-floating mb-3">
                                                         <input class="form-control" id="inputPasswordConfirm" type="text" placeholder="image" name="img"/>
                                                         <label for="inputPasswordConfirm">Course image</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input class="form-control" id="inputPassword" type="number" placeholder="Enter capacity" name="capacity" />
+                                                        <label for="inputPassword">Course capacity</label>
                                                     </div>
                                                 </div>
                                             </div>

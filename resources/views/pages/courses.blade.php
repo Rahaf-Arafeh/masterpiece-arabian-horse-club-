@@ -1,63 +1,36 @@
+
 @extends('layouts.navbar')
 @section('content')
-  
- 
 <section class="courses-section">
     <h1>Courses</h1>
-    <h5><a href="/home">home</a>><a href="/coursespage">courses</a></h5>
+    <h5><a href="/">home</a>><a href="/coursespage">courses</a></h5>
 </section>
-<div class="course-card-container container">
-    <div class="course-card">
-        <img src="https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-           <h2>Course name</h2>
-            <p>Trainer:Mohmad Khateeb</p>
-             <p>course price:<span>300JOD</span></p>
-        <a href="#">Show more details</a>
+<div class="row-search">
+     <form method="GET" action="{{route('course.search')}}">
+          <label >Course Name:</label>
+          <input type="text" name="courseName" value="" placeholder="For Beginners..." class="form-control"  id="search" required />
+          <label>Course Trainer:</label>
+          <input type="text" name="courseTrainer" value="" placeholder="Mohmad" class="form-control"  id="search" required/>
+          <label>Course Price:</label>
+          <input type="number" name="fromPrice" value="" placeholder="From" class="form-control" id="search" required/>
+          <label>Course Price:</label>
+          <input type="number" name="toPrice" value="" placeholder="To" class="form-control" id="search" required/>
+          <button type="submit" >Search</button>
+        </div>
+        <div class="course-card-container container">
+            @foreach($courses as $course)
+            <div class="course-card">
+                <img src="{{$course->img}}" alt="{{$course->course_name}}"/>
+                <h2>{{$course->course_name}}</h2>
+                <p><span>Trainer</span>:{{$course->course_trainer}}</p>
+             <p><span>course price</span>:{{$course->course_price}}JOD</p>
+             <p><span>course period</span>:{{$course->course_period}}</p>
+        <a href="{{route('course.showSingleCourse',$course->id)}}">Show more details</a>
     </div>
-    <div class="course-card">
-    <img src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-           <h2>Course name</h2>
-            <p>Trainer:Mohmad Khateeb</p>
-        <p>course price:<span>300JOD</span></p>
-        <a href="#">Show more details</a>
-    </div>
-    <div class="course-card">
-        <img src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-        
-           <h2>Course name</h2>
-            <p>Trainer:Mohmad Khateeb</p>
-        <p>course price:<span>300JOD</span></p>
-        <a href="#">Show more details</a>
-    </div>
-    <div class="course-card">
-        <img src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-           <h2>Course name</h2>
-            <p>Trainer:Mohmad Khateeb</p>
-        <p>course price:<span>300JOD</span></p>
-        <a href="#">Show more details</a>
-    </div>
-    <div class="course-card">
-        <img src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-           <h2>Course name</h2>
-            <p>Trainer:Mohmad Khateeb</p>
-        <p>course price:<span>300JOD</span></p>
-        <a href="#">Show more details</a>
-    </div>
-    <div class="course-card">
-        <img src="https://images.pexels.com/photos/1524620/pexels-photo-1524620.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-           <h2>Course name</h2>
-            <p>Trainer:Mohmad Khateeb</p>
-        <p>course price:<span><span>300JOD</span></span></p>
-        <a href="#">Show more details</a>
-    </div>
+    @endforeach
 </div>
 
-
-
-
-
-
-
+</form>
 @endsection       
 </body>
 </html>

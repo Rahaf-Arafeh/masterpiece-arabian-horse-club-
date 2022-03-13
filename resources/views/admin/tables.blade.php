@@ -40,6 +40,7 @@
                                             <th>course period </th>
                                             <th>course date</th>
                                             <th>course image</th>
+                                            <th>capacity</th>
                                             <th>Edit</th>
                                             <th>delete</th>
                                         </tr>
@@ -53,6 +54,7 @@
                                             <th>course period </th>
                                             <th>course date</th>
                                             <th>course image</th>
+                                            <th>capacity</th>
                                             <th>Edit</th>
                                             <th>delete</th>
                                         </tr>
@@ -67,6 +69,7 @@
                                             <td>{{$course->course_period}}</td>
                                             <td>{{$course->course_date}}</td>
                                             <td><img src="{{$course->img}}" alt="{{$course->course_name}}" width="300vw"/></td>
+                                            <td>{{$course->capacity}}</td>
                                             <td><button class="edit"  style="background-color:green !important;color:white;border:none;padding:0.5rem;border-radius:3px"><a href="{{route('course.edit',$course->id)}}" style="text-decoration:none; color:white">edit</a></button></td>
                                           
                                             <td>

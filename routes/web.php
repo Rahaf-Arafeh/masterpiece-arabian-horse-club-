@@ -17,8 +17,8 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/home', function () {
-    return view('pages.home');
+Route::get('/', function () {
+    return view('pages.index');
 });
 Route::get('/about', function () {
     return view('pages/about-us');
@@ -26,14 +26,28 @@ Route::get('/about', function () {
 Route::get('/coursespage', function () {
     return view('pages/courses');
 });
+
 // Route::get('/contact', function () {
 //     return view('pages/contact');
 // });
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
-Auth::routes();
 
-Route::resource('/admin',AdminController::class);
-Route::resource('/course',CourseController::class);
-Route::resource('/user',UserController::class);
-Route::resource('/comment',CommentController::class);
+Auth::routes();
+ Route::get('/coursespage', [CourseController::class, 'show']);
+ Route::get('/coursedetails/{course}',[CourseController::class,'showSingleCourse'])->name('course.showSingleCourse');
+ Route::get('/search', [CourseController::class, 'search'])->name('course.search');
+ Route::post('/courses/{course}', [CourseController::class, 'book'])->name('courses.book');
+ Route::post('/coursedetails/{course}',[CourseController::class,'storeComment'])->name('coursedetails.storeComment');
+ 
+ Route::group(['middleware'=>['auth','admin']],function(){
+     Route::resource('/admin',AdminController::class);
+     Route::resource('/course',CourseController::class);
+     Route::resource('/user',UserController::class);
+     Route::resource('/comment',CommentController::class);
+     
+    });
+    Route::group(['middleware'=>['auth']],function(){
+    Route::get('/userProfile', [UserController::class, 'userProfile'])->name('auth.userProfile');
+    Route::put('/userProfile/{user}', [UserController::class, 'updateUserProfile'])->name('user.updateUserProfile');
+    
+});

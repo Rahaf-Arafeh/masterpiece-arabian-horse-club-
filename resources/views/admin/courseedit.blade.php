@@ -69,6 +69,12 @@
                                                         <label for="inputPasswordConfirm">Course image</label>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input class="form-control" id="inputPassword" type="number" placeholder="Enter course capacity" name="capacity" value="{{$course->capacity}}"/>
+                                                        <label for="inputPassword">Course capacity</label>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid"><button type="submit">Edit Course</button></div>

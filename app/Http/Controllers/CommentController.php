@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\comment;
 use Illuminate\Http\Request;
-
+use App\Models\course;
+use App\Models\Admin;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 class CommentController extends Controller
 {
     /**
@@ -14,7 +17,16 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $comments=Comment::all();
+
+        $comments= DB::table('users')->select([
+            'users.id',
+            'users.name',
+            'comments.comment_desc',
+            'courses.course_name',
+        ])->Join('comments','users.id', '=', 'comments.user_id')
+        ->Join('courses','courses.id', '=','comments.course_id')
+        ->get();
+        // $comments=Comment::all();
         return view('admin.commentTable',compact("comments"));
     }
 
@@ -25,7 +37,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.courses-detail');
     }
 
     /**
@@ -34,10 +46,26 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    // public function store(Request $request,comment $comment,Course $course)
+    // {
+    
+    //     // $courses=DB::table('courses')->where('id', $course->id)->get(); 
+    //    if(Auth::check()){
+    //     $id=Auth::user()->id;
+    //     $course=Course::all();
+    //     // Comment::create([$request->comment]);
+    //     $data = array(
+    //         'comment_desc'=>$request->comment,
+    //         "user_id"=>$id,
+    //         'course_id'=>$course->id
+    //     );
+    //     DB::table('comments')->insert($data);
+    //     return view('pages.courses-detail');
+    //    }
+    //    else {
+    //     return redirect('/login'); 
+    //    }
+    // }
 
     /**
      * Display the specified resource.
@@ -83,5 +111,6 @@ class CommentController extends Controller
     {
         $comment->delete(); 
         return redirect()->back();
+        // return redirect()->route('comment.index');
     }
 }

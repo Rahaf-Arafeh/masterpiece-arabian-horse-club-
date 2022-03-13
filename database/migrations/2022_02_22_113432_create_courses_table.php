@@ -22,6 +22,7 @@ class CreateCoursesTable extends Migration
             $table->text('course_period');
             $table->date('course_date');
             $table->text('img');
+            $table->integer('capacity');
             $table->timestamps();
         });
     }

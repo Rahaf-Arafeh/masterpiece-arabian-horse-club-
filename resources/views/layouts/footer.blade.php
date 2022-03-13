@@ -5,7 +5,7 @@
                 <div class='important-links'>
                     <h2>Important Links</h2>
                     <ul>
-                        <li><a href='/home'>Home</a></li>
+                        <li><a href='/'>Home</a></li>
                         <li><a href='#'>About</a></li>
                         <li><a href='#'>Courses</a></li>
                         <li><a class="" href="{{ route('login') }}">{{ __('Login') }}</a></li>

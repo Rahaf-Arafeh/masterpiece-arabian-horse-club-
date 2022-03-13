@@ -32,20 +32,26 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
+                                            <th>User Name</th>
+                                            <th>Course Name</th>
                                             <th>comment</th>
                                             <th>delete</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>comment</th>
+                                        <th>User Name</th>
+                                        <th>Course Name</th>
+                                        <th>Comment</th>
                                             <th>delete</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         @foreach($comments as $comment)
                                         <tr>
-                                            <td>{{$course->course_name}}</td>   
+                                            <td>{{$comment->name}}</td>
+                                            <td>{{$comment->course_name}}</td>
+                                            <td>{{$comment->comment_desc}}</td>   
                                             <td>
                                             <form method="POST" action="{{route('comment.destroy',$comment->id)}}">
                                              @csrf
