@@ -19,14 +19,13 @@ class CommentController extends Controller
     {
 
         $comments= DB::table('users')->select([
-            'users.id',
+            'comments.id',
             'users.name',
             'comments.comment_desc',
             'courses.course_name',
         ])->Join('comments','users.id', '=', 'comments.user_id')
         ->Join('courses','courses.id', '=','comments.course_id')
         ->get();
-        // $comments=Comment::all();
         return view('admin.commentTable',compact("comments"));
     }
 
@@ -75,7 +74,16 @@ class CommentController extends Controller
      */
     public function show(comment $comment)
     {
-        //
+        $comments= DB::table('users')->select([
+            'users.id',
+            'users.name',
+            'comments.comment_desc',
+            'courses.course_name',
+        ])->Join('comments','users.id', '=', 'comments.user_id')
+        ->Join('courses','courses.id', '=','comments.course_id')
+        ->get();
+        // $comments=Comment::all();
+        return view('pages.courses-detail',compact("comments"));
     }
 
     /**
@@ -109,8 +117,11 @@ class CommentController extends Controller
      */
     public function destroy(comment $comment)
     {
+
+        // return redirect('/cloth');
+
         $comment->delete(); 
         return redirect()->back();
-        // return redirect()->route('comment.index');
+      
     }
 }

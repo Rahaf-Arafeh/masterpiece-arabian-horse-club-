@@ -59,6 +59,8 @@
 
                                           <button type="submit" class="delete" style="background-color:red !important;color:white;border:none;padding:0.5rem;border-radius:3px">delete</button>
                                        </form>
+                                       <!-- <a href="{{ url('delete-comment/'.$comment->id) }}" class="btn btn-danger">Delete</a> -->
+
                                     </td>
 
                                         </tr>

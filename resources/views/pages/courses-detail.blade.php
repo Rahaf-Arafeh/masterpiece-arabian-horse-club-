@@ -69,41 +69,12 @@
                         </div>
                            </form> 
                         </div>
-
-         
-              <!-- </div>   -->
-                    
-           
-               <!-- <div class='form2-signin'>
-                    <div class="content-box">
-                        @if(!empty(Session::get('success')))
-                        <div class="alert alert-success"> {{ Session::get('success') }}</div>
-                        @endif
-                        
-                        
-                        <div class="form-box-sigin">
-                                    <h2>Reservation</h2>
-                                <form method="post" action="{{route('courses.book',$course->id)}}">
-                        @csrf
-                            <div class="form-group">
-                                <label for="phone">Phone:</label>
-                                <input type="tel" id="phone" name="phone" required>
-                                    
-                            </div>
-                            @if(!empty(Session::get('fail')))
-                           <div class="alert alert-danger"> {{ Session::get('fail') }}</div>
-                            @endif
-                            
-                            <div class="form-group"><input type="submit" value="Book Now" />
-                        </div>
-                        </form>
-                        
-                           </div>
-                         
-                               </div> -->
-                               
-                                    <!-- </div> -->
-                          
+                     <div class="user-comment">
+                     @foreach($comments as $comment)
+                         <p class="user-name">{{$comment->name}}<p>
+                          <p class="comment-body">{{$comment->comment_desc}}</p>
+                          @endforeach   
+                     </div>   
                                        </div>
                            
 @endsection       

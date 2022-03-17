@@ -59,6 +59,7 @@ class CourseController extends Controller
         return view('pages.courses',compact("courses"));
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -83,10 +84,22 @@ class CourseController extends Controller
         $courses=Course::all();
         return view('admin.tables',compact("courses"));
     }
+
     public function showSingleCourse(course $course)
     {
-        return view('pages.courses-detail',compact("course"));
+        $comments= DB::table('users')->select([
+                    'users.id',
+                    'users.name',
+                    'comments.comment_desc',
+                    'courses.course_name',
+                ])->Join('comments','users.id', '=', 'comments.user_id')
+                ->Join('courses','courses.id', '=','comments.course_id')
+                ->where('course_id','=',$course->id)
+                ->get();
+        return view("pages.courses-detail",compact('course','comments'));
+
     }
+
     public function search(Request $request)
     {
        $courses=Course::query()

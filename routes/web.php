@@ -38,12 +38,16 @@ Auth::routes();
  Route::get('/search', [CourseController::class, 'search'])->name('course.search');
  Route::post('/courses/{course}', [CourseController::class, 'book'])->name('courses.book');
  Route::post('/coursedetails/{course}',[CourseController::class,'storeComment'])->name('coursedetails.storeComment');
- 
+//  Route::get('/coursedetails',[CourseController::class,'showComments']);
+// Route::get('/coursedetails',[CommentController::class,'show']);
+
  Route::group(['middleware'=>['auth','admin']],function(){
      Route::resource('/admin',AdminController::class);
      Route::resource('/course',CourseController::class);
      Route::resource('/user',UserController::class);
      Route::resource('/comment',CommentController::class);
+    //  delete-comment
+    // Route::get('delete-comment/{id}',[CommentController::class,'destroy']);
      
     });
     Route::group(['middleware'=>['auth']],function(){

@@ -1,4 +1,3 @@
-
 @extends('layouts.navbar')
 @section('content')
 <section class="courses-section">
@@ -31,6 +30,8 @@
 </div>
 
 </form>
-@endsection       
+@endsection
+
+
 </body>
 </html>
