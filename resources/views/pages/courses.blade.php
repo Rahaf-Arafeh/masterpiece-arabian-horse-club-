@@ -1,3 +1,4 @@
+@extends('layouts.footer')
 @extends('layouts.navbar')
 @section('content')
 <section class="courses-section">

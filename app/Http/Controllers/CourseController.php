@@ -90,13 +90,15 @@ class CourseController extends Controller
         $comments= DB::table('users')->select([
                     'users.id',
                     'users.name',
+                    'comments.created_at',
                     'comments.comment_desc',
                     'courses.course_name',
                 ])->Join('comments','users.id', '=', 'comments.user_id')
                 ->Join('courses','courses.id', '=','comments.course_id')
                 ->where('course_id','=',$course->id)
                 ->get();
-        return view("pages.courses-detail",compact('course','comments'));
+         $commentCount=$comments->count();       
+        return view("pages.courses-detail",compact('course','comments','commentCount'));
 
     }
 

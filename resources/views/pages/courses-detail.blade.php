@@ -50,12 +50,17 @@
                                         <td class="label">Capacity:</td>
                                         <td class="info">{{$course->capacity}}</td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td class="label">Description:</td>
                                         <td class="info">{{$course->course_desc}}</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
+                             <div class="course-description">
+                                 <h3>Description</h3>
+                                 <!-- <p>{{$course->course_desc}}</p> -->
+                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsam odio illum, cupiditate totam explicabo accusantium dolor enim quod cum. Asperiores sequi esse incidunt minima, accusantium ullam! Ipsum temporibus omnis laboriosam explicabo accusantium minus in totam, perspiciatis, illum sunt odit blanditiis eius aliquid ea eligendi voluptatem obcaecati voluptatum eos, optio maiores et dolores consectetur labore. Ducimus atque amet enim aspernatur.</p>
+                             </div>
                               </div>
                  <div class="comment-section">
                      <h2>Comments</h2>
@@ -69,13 +74,15 @@
                         </div>
                            </form> 
                         </div>
-                     <div class="user-comment">
-                     @foreach($comments as $comment)
-                         <p class="user-name">{{$comment->name}}<p>
+                        <div class="user-comment">
+                            <h4>{{$commentCount}}Comments</h4>
+                        @foreach($comments as $comment)
+                         <p class="user-name"><i class="fas fa-user-circle"></i>&nbsp &nbsp{{$comment->name}}<p>
                           <p class="comment-body">{{$comment->comment_desc}}</p>
+                          <p class="comment-date">{{$comment->created_at}}</p>
                           @endforeach   
-                     </div>   
-                                       </div>
+                        </div>   
+                    </div>
                            
 @endsection       
 </body>

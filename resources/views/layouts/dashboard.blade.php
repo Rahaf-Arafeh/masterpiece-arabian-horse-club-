@@ -1,6 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand ps-3" href="index.html">Arabian Horse Club</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -47,9 +47,10 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="">Rooms</a>
-                                    <a class="nav-link" href="">Users</a>
-                                    <a class="nav-link" href="">Reservations</a>
+                                    <a class="nav-link" href="/course">Courses</a>
+                                    <a class="nav-link" href="/user">Users</a>
+                                    <a class="nav-link" href="/admin">Reservations</a>
+                                    <a class="nav-link" href="/comment">Comments</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -61,8 +62,8 @@
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="">Create Room</a>
-                                            <a class="nav-link" href="">Create User</a>
+                                            <a class="nav-link" href="/course/create">Create Course</a>
+                                            <a class="nav-link" href="/user/create">Create User</a>
                                         </nav>
                                 </nav>
                             </div>
