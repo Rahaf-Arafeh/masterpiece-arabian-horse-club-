@@ -36,30 +36,16 @@
     <div class='home-course-card-desc'><h3>Explore a variety of <strong>amazing </strong></h3>
     <h3><strong>horse training courses</strong> to head start to a world of adventures</h3>
 <div class="course-card-container container">
+  @foreach($courses->take(3) as $course) 
     <div class="course-card">
-    <img src="https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-           <h2>Course name</h2>
-            <p><span>Trainer</span>:Mohmad Khateeb</p>
-             <p><span>course price</span>:300JOD</p>
-             <p><span>course period</span>:2 months</p>
-        <a href="#">Show more details</a>
+    <img src="{{$course->img}}" alt="{{$course->course_name}}"/>
+           <h2>{{$course->course_name}}</h2>
+            <p><span>Trainer</span>:{{$course->course_trainer}}</p>
+             <p><span>course price</span>:{{$course->course_price}}JOD</p>
+             <p><span>course period</span>:{{$course->course_period}}</p>
+        <a href="{{route('course.showSingleCourse',$course->id)}}">Show more details</a>
     </div>
-    <div class="course-card">
-    <img src="https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-           <h2>Course name</h2>
-            <p><span>Trainer</span>:Mohmad Khateeb</p>
-             <p><span>course price</span>:300JOD</p>
-             <p><span>course period</span>:2 months</p>
-        <a href="#">Show more details</a>
-    </div>
-    <div class="course-card">
-    <img src="https://images.pexels.com/photos/1364073/pexels-photo-1364073.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-           <h2>Course name</h2>
-            <p><span>Trainer</span>:Mohmad Khateeb</p>
-             <p><span>course price</span>:300JOD</p>
-             <p><span>course period</span>:2 months</p>
-        <a href="#">Show more details</a>
-    </div>
+   @endforeach
 </div>
 </div>
 <button><a href="/coursespage">View All Courses</a></button>

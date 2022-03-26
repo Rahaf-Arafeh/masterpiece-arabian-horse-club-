@@ -8,9 +8,9 @@
 <div class="row-search">
      <form method="GET" action="{{route('course.search')}}">
           <label >Course Name:</label>
-          <input type="text" name="courseName" value="" placeholder="For Beginners..." class="form-control"  id="search" required />
+          <input type="text" name="courseName" value="" placeholder="For Beginners..." class="form-control"  id="search"  />
           <label>Course Trainer:</label>
-          <input type="text" name="courseTrainer" value="" placeholder="Mohmad" class="form-control"  id="search" required/>
+          <input type="text" name="courseTrainer" value="" placeholder="Mohmad" class="form-control"  id="search"/>
           <label>Course Price:</label>
           <input type="number" name="fromPrice" value="" placeholder="From" class="form-control" id="search" required/>
           <label>Course Price:</label>

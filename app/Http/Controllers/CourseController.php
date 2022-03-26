@@ -158,6 +158,11 @@ class CourseController extends Controller
         return redirect('/login'); 
        }
     }
+    public function bestprice()
+    {
+        $courses = DB::table('courses')->where('course_price', '<',350)->get();
+        return view('pages.index',compact("courses"));
+    }
     /**
      * Remove the specified resource from storage.
      *

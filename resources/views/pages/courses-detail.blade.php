@@ -58,8 +58,8 @@
                             </table>
                              <div class="course-description">
                                  <h3>Description</h3>
-                                 <!-- <p>{{$course->course_desc}}</p> -->
-                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsam odio illum, cupiditate totam explicabo accusantium dolor enim quod cum. Asperiores sequi esse incidunt minima, accusantium ullam! Ipsum temporibus omnis laboriosam explicabo accusantium minus in totam, perspiciatis, illum sunt odit blanditiis eius aliquid ea eligendi voluptatem obcaecati voluptatum eos, optio maiores et dolores consectetur labore. Ducimus atque amet enim aspernatur.</p>
+                                 <p>{{$course->course_desc}}</p>
+                                 <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ipsam odio illum, cupiditate totam explicabo accusantium dolor enim quod cum. Asperiores sequi esse incidunt minima, accusantium ullam! Ipsum temporibus omnis laboriosam explicabo accusantium minus in totam, perspiciatis, illum sunt odit blanditiis eius aliquid ea eligendi voluptatem obcaecati voluptatum eos, optio maiores et dolores consectetur labore. Ducimus atque amet enim aspernatur.</p> -->
                              </div>
                               </div>
                  <div class="comment-section">
