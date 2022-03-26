@@ -126,7 +126,7 @@ class CourseController extends Controller
         $courses = DB::table('course_user')->where('course_id', $course->id)->get();
         $courseCount = $courses->count();
         if($courseCount == $course->capacity){
-            return redirect()->back()->with('fail','This Course Falled!');
+            return redirect()->back()->with('fail','This Course is Full!');
         }
         $error=false;
     

@@ -27,9 +27,7 @@ Route::get('/coursespage', function () {
     return view('pages/courses');
 });
 
-// Route::get('/contact', function () {
-//     return view('pages/contact');
-// });
+
 
 
 Auth::routes();
@@ -39,16 +37,14 @@ Auth::routes();
  Route::post('/courses/{course}', [CourseController::class, 'book'])->name('courses.book');
  Route::post('/coursedetails/{course}',[CourseController::class,'storeComment'])->name('coursedetails.storeComment');
  Route::get('/', [CourseController::class, 'bestprice'])->name('home.bestprice');
-//  Route::get('/coursedetails',[CourseController::class,'showComments']);
-// Route::get('/coursedetails',[CommentController::class,'show']);
+
 
  Route::group(['middleware'=>['auth','admin']],function(){
      Route::resource('/admin',AdminController::class);
      Route::resource('/course',CourseController::class);
      Route::resource('/user',UserController::class);
      Route::resource('/comment',CommentController::class);
-    //  delete-comment
-    // Route::get('delete-comment/{id}',[CommentController::class,'destroy']);g
+
      
     });
     Route::group(['middleware'=>['auth']],function(){

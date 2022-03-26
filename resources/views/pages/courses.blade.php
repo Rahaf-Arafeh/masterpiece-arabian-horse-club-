@@ -17,6 +17,9 @@
           <input type="number" name="toPrice" value="" placeholder="To" class="form-control" id="search" required/>
           <button type="submit" >Search</button>
         </div>
+        @if(!empty(Session::get('search')))
+        <h2 style="text-align:center;"> {{ Session::get('search') }}</h2>
+        @endif
         <div class="course-card-container container">
             @foreach($courses as $course)
             <div class="course-card">

@@ -14,20 +14,18 @@
         <div class="box">
             <img src="assets/img/service3.png" alt=""/>
             <h1 class="sup-headings">Satisfaction Guarantee</h1>
-                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Expedita voluptatem dolor sit amet consectetur adipisicing.</p>
+                 <p>We have more than 20 years of experience in
+                      Equestrian And Horse Riding.</p>
         </div>
         <div class="box-fix">
             <img src="assets/img/service1.png" alt=""/>
             <h1 class="sup-headings">Best Horse Riding</h1>
-                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Expedita voluptatem dolor sit amet consectetur adipisicing.</p>
+                 <p>We have the best trained horses in the world so we can gurantee for you unique experience.</p>
         </div>
         <div class="box">
             <img src="assets/img/service2.png" alt=""/>
             <h1 class="sup-headings">Professional Trainer</h1>
-                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Expedita voluptatem dolor sit amet consectetur adipisicing.</p>
+                 <p>We have the best horse training experts With a rich history of their achievements.</p>
         </div>
     </div>
 </section>
@@ -50,12 +48,7 @@
 </div>
 <button><a href="/coursespage">View All Courses</a></button>
 </section>
-   
-<!-- <div class="map">
-                <iframe
-                src="https://maps.google.com/maps?q=amman%20jordan&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    height="470" style="border:0;" allowfullscreen=""></iframe>
-            </div> -->
+
 
       <div class="map">  
         <iframe  width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Amman,Arabian%20horse%20club&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%"></iframe>
